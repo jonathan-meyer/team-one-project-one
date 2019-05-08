@@ -6,3 +6,4 @@ Team #1's first project.
 - any team name ideas?
 - Jonathan was here 😎
 - Anthony was here first 👍
+- fred is cool 💋
