@@ -76,6 +76,7 @@ min-width: 500px;
 max-width: 580px;
 display: inline-block;
 height: 440px;
+padding-left: 30px;
 }
 
 #mailer {
