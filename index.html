@@ -33,59 +33,77 @@
   </head>
   
       
-  <body>
+<body>
   
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
-          <img src="assets/images/mountains.png" width="35px">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Instagram <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Facebook</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Youtube</a>
-              </li>
-            
-            </ul>
-          </div>
-        </nav>
-      </div>
-  
-      <div id="banner">
-          <div class="jumbotron jumbotron-fluid" id="bannerPage">
-              <div class="container2">
-                <h1 class="display-4">Take a Hike</h1>
-                <p class="lead">Your go-to resource for trail and weather conditions when planning your next adventure.</p>
-              </div>
-            </div>
-      </div>
-  
-      <div class="topnav">
-  
-          <input type="text" placeholder="Search..">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+      <img src="assets/images/mountains.png" width="35px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Instagram <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Facebook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Youtube</a>
+            </li>
+          
+          </ul>
         </div>
+      </nav>
+  </div>
   
-      <div id="container3">
-  
-          <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+    <div id="banner">
+        <div class="jumbotron jumbotron-fluid" id="bannerPage">
+            <div class="container2">
+              <h1 id="mainHeader">Take a Hike</h1>
+              <p class="lead">Your go-to resource for trail and weather conditions when planning your next adventure.</p>
             </div>
+          </div>
+    </div>
+
   
+  <!-- <div class="topnav">
+    <input type="text" placeholder="Search..">
+  </div> -->
+
+  <!-- Card holding our form -->
+  <div class="container">
+    <div class="col-md-12">
+      <div id="cardFormContainer">
+        <div class="card">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <h5 class="card-title">Search for a trail</h5>
+              <!-- First Form Entry -->
+              <div class="form-group">
+                  <label for="exampleFormControlInput1">City</label>
+                  <input type="text" class="form-control" id="City" placeholder="Ex. 'Ex. Salt Lake City...'">
+                </div>
+              <!-- Second Form Body -->
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Latitude</label>
+                <input type="number" class="form-control" id="latitude" placeholder="Ex. '94.3208'">
+              </div>
+              <!-- Second Form Entry -->
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Longitude</label>
+                <input type="number" class="form-control" id="longitude" placeholder="Ex. '-101.4871'">
+              </div>
+              <!-- End Form Entries Form -->
+              <a href="#" class="btn btn-primary">Get Hikin'!</a>
+            </div>
+        </div>
       </div>
+    </div>
+  </div>
+  <!-- End Form Card -->
     
-  
-  </body>
+</body>
       
 </html>
