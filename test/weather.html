@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WeatherMap Test</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+      $(function() {
+        var url =
+          "https://api.openweathermap.org/data/2.5/weather?" +
+          $.param({
+            lat: 39.9787,
+            lon: -105.2755,
+            units: "imperial",
+            appid: "d738afa0d17330f5591a1e848327af0e"
+          });
+
+        console.log({ url });
+
+        $.ajax({
+          url
+        })
+          .then(data => {
+            console.log({ data });
+            $("#root").text(JSON.stringify(data, null, 2));
+          })
+          .catch(err => console.error(err));
+      });
+    </script>
+  </head>
+  <body>
+    <pre id="root"></pre>
+  </body>
+</html>
