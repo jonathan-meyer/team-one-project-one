@@ -3,36 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>WeatherMap Test</title>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <script>
       $(function() {
-        var url =
-          "https://api.openweathermap.org/data/2.5/weather?" +
-          $.param({
-            lat: 39.9787,
-            lon: -105.2755,
-            units: "imperial",
-            appid: "d738afa0d17330f5591a1e848327af0e"
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(({ coords }) => {
+            $.ajax({
+              url:
+                "https://api.openweathermap.org/data/2.5/weather?" +
+                $.param({
+                  lat: coords.latitude,
+                  lon: coords.longitude,
+                  units: "imperial",
+                  appid: "d738afa0d17330f5591a1e848327af0e"
+                })
+            })
+              .then(data => {
+                console.log({ data });
+                $("#root").append(
+                  data.weather.map(w =>
+                    $("<div>")
+                      .addClass("border m-3 d-flex justify-content-center align-items-center")
+                      .append($("<img>").attr({ src: `http://openweathermap.org/img/w/${w.icon}.png`, alt: w.description }), $("<div>").text(w.description))
+                  ),
+                  $("<pre>")
+                    .addClass("m-3")
+                    .text(JSON.stringify(data, null, 2))
+                );
+              })
+              .catch(err => console.error(err));
           });
-
-        console.log({ url });
-
-        $.ajax({
-          url
-        })
-          .then(data => {
-            console.log({ data });
-            $("#root").text(JSON.stringify(data, null, 2));
-          })
-          .catch(err => console.error(err));
+        } else {
+          $("#root").text("your browser doesn't support geolocation 😢");
+        }
       });
     </script>
   </head>
   <body>
-    <pre id="root"></pre>
+    <div id="root"></div>
   </body>
 </html>
