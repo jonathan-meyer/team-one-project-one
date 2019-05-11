@@ -4,11 +4,11 @@ body {
   padding: 0px;
   background: white;
   color: #777;
+  background-image: url("../images/topograph.png") !important;
 }
 
 
 .container  {
-
 width: 100vw;
 }
 
@@ -44,7 +44,7 @@ color: rgb(0, 0, 0);
 h5 {
 text-align: center;
 font-weight: bold;
-font-size: 20pt;
+font-size: 24pt;
 font-family: 'Pacifico', cursive;
 color: black;
 letter-spacing: 1.5pt;
@@ -65,9 +65,32 @@ background-color: white;
 display: inline-flex;
 margin: 0 auto;
 width: 100%;
+padding-bottom: 1000px;
 }
 
-.card-body {
-min-width: 400px;
-margin: 0 auto;
+.card {
+min-width: 500px;
+}
+
+#mountain-img {
+max-width: 580px;
+display: inline-block;
+height: 440px;
+padding-left: 30px;
+}
+
+#mailer {
+background-color: blanchedalmond;
+height: 40px;
+width: 100%;
+display: block;
+}
+
+#mailerText {
+text-align: center;
+font-weight: 300;
+padding: 4px;
+font-size: 16pt;
+font-family: 'Pacifico', cursive;
+color: black;
 }
