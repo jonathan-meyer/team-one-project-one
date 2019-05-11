@@ -15,24 +15,55 @@
     />
     <script>
       $(function() {
-        $("#lat").val("40.714224 ");
-        $("#lon").val("-73.961452");
+        var url = "https://maps.googleapis.com/maps/api/geocode/json";
 
-        $("form").on("submit", function(e) {
+        $("#lat").val("39.9787");
+        $("#lon").val("-105.2755");
+        $("#address").val("1600 Pennsylvania Ave NW, Washington, DC 20500, USA");
+
+        $("#one form").on("submit", function(e) {
           e.preventDefault();
+
           var form = $(this).serializeArray();
           console.log({ form });
+
+          $("#one .out").empty();
+
           $.ajax({
             url:
-              "https://maps.googleapis.com/maps/api/geocode/json?" +
+              url +
+              "?" +
               $.param({
                 key: "AIzaSyA1z01urdsx5lGMEuk34rZ6LV8XTvl_lP8",
-                latlng: form.map(i => i.value).join(","),
+                latlng: form.map(i => i.value.trim()).join(","),
                 sensor: true
               })
           }).then(geocode => {
             console.log({ geocode });
-            $("#out").append(geocode.results.map(res => $("<div>").text(res.formatted_address)));
+            $("#one .out").append(geocode.results.map(res => $("<div>").text(res.formatted_address)));
+          });
+        });
+
+        $("#two form").on("submit", function(e) {
+          e.preventDefault();
+
+          var form = $(this).serializeArray();
+          console.log({ form });
+
+          $("#two .out").empty();
+
+          $.ajax({
+            url:
+              url +
+              "?" +
+              $.param({
+                key: "AIzaSyA1z01urdsx5lGMEuk34rZ6LV8XTvl_lP8",
+                address: form.map(i => i.value.trim()).join(""),
+                sensor: true
+              })
+          }).then(geocode => {
+            console.log({ geocode });
+            $("#two .out").append(geocode.results.map(res => $("<div>").text(JSON.stringify(res.geometry.location))));
           });
         });
       });
@@ -40,9 +71,9 @@
   </head>
   <body>
     <div class="container p-2">
-      <div class="card">
+      <div id="one" class="card">
         <div class="card-body">
-          <h5 class="card-title">Geocoding</h5>
+          <h5 class="card-title">Geocoding (lat,lon -> address)</h5>
           <form class="form-inline">
             <div class="input-group mb-2 mr-sm-2">
               <div class="input-group-prepend">
@@ -60,7 +91,24 @@
 
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
           </form>
-          <div id="out" class="border mt-2"></div>
+          <div class="out border mt-2"></div>
+        </div>
+      </div>
+
+      <div id="two" class="card">
+        <div class="card-body">
+          <h5 class="card-title">Geocoding (address -> lat,lon)</h5>
+          <form class="form-inline">
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">N</div>
+              </div>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Address"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+          </form>
+          <div class="out border mt-2"></div>
         </div>
       </div>
     </div>
