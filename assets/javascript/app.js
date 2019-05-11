@@ -22,6 +22,7 @@ $(function() {
 
       for (var i = 0; i < Math.min(9, data.length); i++) {
         var trailDiv = $("<div>");
+        $(trailDiv).addClass("trail-block");
 
         var trailName = $("<h3>").text("Name: " + data[i].name);
         var trailBlurb = $("<p>").text(data[i].summary);
