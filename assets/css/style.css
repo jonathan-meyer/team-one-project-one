@@ -114,3 +114,9 @@ font-family: 'Pacifico', cursive;
 color: black;
 margin: 0;
 }
+
+#cards {
+  margin: 50px 20px 20px 20px;
+  height: max-content;
+  width: 100%;
+}
