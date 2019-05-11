@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Location Test</title>
+    <title>Geocoding</title>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link
@@ -15,22 +15,54 @@
     />
     <script>
       $(function() {
-        // https://code.google.com/archive/p/openaddresses/wikis/RESTService.wiki
-        // $.ajax({
-        //   url:
-        //     "https://maps.googleapis.com/maps/api/geocode/json?" +
-        //     $.param({
-        //       key: "",
-        //       latlng: "40.714224,-73.961452",
-        //       sensor: true
-        //     })
-        // }).then(geocode => {
-        //   console.log({ geocode });
-        // });
+        $("#lat").val("40.714224 ");
+        $("#lon").val("-73.961452");
+
+        $("form").on("submit", function(e) {
+          e.preventDefault();
+          var form = $(this).serializeArray();
+          console.log({ form });
+          $.ajax({
+            url:
+              "https://maps.googleapis.com/maps/api/geocode/json?" +
+              $.param({
+                key: "AIzaSyA1z01urdsx5lGMEuk34rZ6LV8XTvl_lP8",
+                latlng: form.map(i => i.value).join(","),
+                sensor: true
+              })
+          }).then(geocode => {
+            console.log({ geocode });
+            $("#out").append(geocode.results.map(res => $("<div>").text(res.formatted_address)));
+          });
+        });
       });
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="container p-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Geocoding</h5>
+          <form class="form-inline">
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">N</div>
+              </div>
+              <input type="text" class="form-control" id="lat" name="lat" placeholder="Latatude" />
+            </div>
+
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">W</div>
+              </div>
+              <input type="text" class="form-control" id="lon" name="lon" placeholder="Longatude" />
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+          </form>
+          <div id="out" class="border mt-2"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
