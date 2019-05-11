@@ -1,15 +1,30 @@
 
 body {
-  margin: 0px;
-  padding: 0px;
-  background: white;
-  color: #777;
-  background-image: url("../images/topograph.png") !important;
+margin: 0px;
+padding: 0px;
+background: white;
+color: #777;
+background-image: url("../images/topograph.png") !important;
 }
-
 
 .container  {
 width: 100vw;
+background-color: white;
+}
+
+#carouselContainer {
+margin-top: 60px;
+padding-bottom: 60px;
+}
+
+#carouselExampleIndicators {
+width: 90%;
+margin: 0 auto;
+}
+
+.d-block {
+max-height: 500px;
+border-radius: 30px;
 }
 
 #nav {
@@ -65,7 +80,10 @@ background-color: white;
 display: inline-flex;
 margin: 0 auto;
 width: 100%;
-padding-bottom: 1000px;
+padding-bottom: 60px;
+border-bottom-color: rgb(190, 187, 187);
+border-bottom-style: solid;
+border-width: 2px;
 }
 
 .card {
@@ -84,6 +102,7 @@ background-color: blanchedalmond;
 height: 40px;
 width: 100%;
 display: block;
+margin: 0;
 }
 
 #mailerText {
@@ -93,4 +112,5 @@ padding: 4px;
 font-size: 16pt;
 font-family: 'Pacifico', cursive;
 color: black;
+margin: 0;
 }
