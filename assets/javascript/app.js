@@ -26,7 +26,7 @@ $.ajax({
         var trailBlurb = $("<p>").text(data[i].summary);
         var length =$("<p>").text(data[i].length+" miles");
         var difficulty =$("<p>").text(data[i].difficulty);
-        var stars = $("<p>").text(data[i].star)
+        var stars = $("<p>").text(data[i].stars)
         
         var trailPic = $("<img>");
         trailPic.attr("src", data[i].imgSmall);
