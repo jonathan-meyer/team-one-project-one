@@ -35,8 +35,7 @@
               "?" +
               $.param({
                 key: "AIzaSyA1z01urdsx5lGMEuk34rZ6LV8XTvl_lP8",
-                latlng: form.map(i => i.value.trim()).join(","),
-                sensor: true
+                latlng: form.map(i => i.value.trim()).join(",")
               })
           }).then(geocode => {
             console.log({ geocode });
@@ -58,8 +57,7 @@
               "?" +
               $.param({
                 key: "AIzaSyA1z01urdsx5lGMEuk34rZ6LV8XTvl_lP8",
-                address: form.map(i => i.value.trim()).join(""),
-                sensor: true
+                address: form.map(i => i.value.trim()).join("")
               })
           }).then(geocode => {
             console.log({ geocode });
@@ -103,7 +101,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text">N</div>
               </div>
-              <input type="text" class="form-control" id="address" name="address" placeholder="Address"/>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Address" />
             </div>
 
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
