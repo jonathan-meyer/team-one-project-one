@@ -120,3 +120,25 @@ margin: 0;
   height: max-content;
   width: 100%;
 }
+
+#trails {
+  column-count: 3;
+  height: max-content;
+
+}
+
+#new-card{
+  
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: black
+}
+
+#new-div {
+  border: 6px solid rgb(168, 168, 168);
+  border-radius: 2%;
+  height: 450px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  text-align: center;
+}
