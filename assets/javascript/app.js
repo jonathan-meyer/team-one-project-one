@@ -41,7 +41,7 @@ $(function() {
         $(trailDiv).append(difficulty);
         $(trailDiv).append(stars + " stars");
 
-        $("#new-card").prepend(trailDiv);
+        $("#new-card").append(trailDiv);
       }
     });
 
