@@ -9,7 +9,9 @@ background-image: url("../images/topograph.png") !important;
 
 .container  {
 width: 100vw;
-background-color: white;
+background-color:white;
+
+
 }
 
 #carouselContainer {
@@ -123,24 +125,37 @@ margin: 0;
 
 #trails {
   column-count: 3;
-  height: max-content;
-
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  display: inline-block;
+  background-color: white;
+ 
 }
+
+
+
 
 #new-card{
   
   margin-top: 0px;
   margin-bottom: 10px;
-  color: black
+  color: black;
+  
+  
 }
 
 #new-div {
-  border: 6px solid rgb(168, 168, 168);
+  border: 40px solid rgb(46, 63, 46);
   border-radius: 2%;
-  height: 450px;
+  height: 600px;
   margin-bottom: 20px;
-  margin-top: 0px;
   text-align: center;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  
+  
+  
 }
 
 /*Media Queries*/
