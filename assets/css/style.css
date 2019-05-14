@@ -115,6 +115,34 @@ color: black;
 margin: 0;
 }
 
+#cards {
+  margin: 50px 20px 20px 20px;
+  height: max-content;
+  width: 100%;
+}
+
+#trails {
+  column-count: 3;
+  height: max-content;
+
+}
+
+#new-card{
+  
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: black
+}
+
+#new-div {
+  border: 6px solid rgb(168, 168, 168);
+  border-radius: 2%;
+  height: 450px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  text-align: center;
+}
+
 /*Media Queries*/
 
   /* max widths: 1200px, 996px, 700px */
