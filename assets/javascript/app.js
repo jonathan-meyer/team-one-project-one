@@ -21,9 +21,11 @@ $(function() {
       console.log(data);
 
       for (var i = 0; i < Math.min(9, data.length); i++) {
-        var trailDiv = $("<div>");
+        var trailDiv = $("<div>", {
+          id: 'new-div',
+        });
 
-        var trailName = $("<h3>").text("Name: " + data[i].name);
+        var trailName = $("<h3>").text(" " + data[i].name);
         var trailBlurb = $("<p>").text(data[i].summary);
         var length = $("<p>").text(data[i].length + " miles");
         var difficulty = $("<p>").text(data[i].difficulty);
@@ -39,9 +41,11 @@ $(function() {
         $(trailDiv).append(difficulty);
         $(trailDiv).append(stars);
 
-        $("#trails").append(trailDiv);
+        $("#new-card").append(trailDiv);
       }
     });
+
+
   });
 
   $("#load_latlon").on("click", function(e) {
