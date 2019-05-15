@@ -1,4 +1,19 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyCigFa99mWeaeY2L7Iheqdo_JbcLZapIFs",
+  authDomain: "take-a-hike-de5fe.firebaseapp.com",
+  databaseURL: "https://take-a-hike-de5fe.firebaseio.com",
+  projectId: "take-a-hike-de5fe",
+  storageBucket: "take-a-hike-de5fe.appspot.com",
+  messagingSenderId: "584883654583",
+  appId: "1:584883654583:web:ab3e9864344feb61"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
+
 $(function() {
+ 
   $("#hike").on("click", function(e) {
     e.preventDefault();
 
@@ -30,6 +45,9 @@ $(function() {
         var length = $("<p>").text(data[i].length + " miles");
         var difficulty = $("<p>").text(data[i].difficulty);
         var stars = $("<p>").text(data[i].stars + " stars");
+        var button = $("<button>").text("Hike it!");
+
+        $(button).addClass("btn btn-secondary hike-it");
 
         var trailPic = $("<img>");
         trailPic.attr("src", data[i].imgSmall);
@@ -40,9 +58,25 @@ $(function() {
         $(trailDiv).append(length);
         $(trailDiv).append(difficulty);
         $(trailDiv).append(stars);
+        $(trailDiv).append(button);
 
         $("#new-card").append(trailDiv);
+
+        
       }
+      $(".hike-it").on("click", function(){
+        console.log("you hiked it");
+        console.log(trailName);
+        trailName; 
+        length;
+
+        var myHike = {
+          myTrail: data[i].name,
+          myMiles: data[i].length,
+        }
+        console.log(trailName, length);
+        database.ref().push(myHike);
+      })
     });
 
 
