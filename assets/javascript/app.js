@@ -12,6 +12,10 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
+var trailName;
+var length;
+
+
 $(function() {
  
   $("#hike").on("click", function(e) {
@@ -47,7 +51,7 @@ $(function() {
         var stars = $("<p>").text(data[i].stars + " stars");
         var button = $("<button>").text("Hike it!");
 
-        $(button).addClass("btn btn-secondary hike-it");
+        $(button).addClass("btn btn-secondary hike-it").data("name", data[i].name).data("length", data[i].length);
 
         var trailPic = $("<img>");
         trailPic.attr("src", data[i].imgSmall);
@@ -65,17 +69,16 @@ $(function() {
         
       }
       $(".hike-it").on("click", function(){
-        console.log("you hiked it");
-        console.log(trailName);
-        trailName; 
-        length;
+        
 
         var myHike = {
-          myTrail: data[i].name,
-          myMiles: data[i].length,
+          myTrail: $(this).data("name"),
+          myMiles: $(this).data("length")
         }
-        console.log(trailName, length);
+        console.log(myHike);
         database.ref().push(myHike);
+
+        
       })
     });
 
