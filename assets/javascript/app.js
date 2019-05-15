@@ -45,12 +45,6 @@ $(function() {
         });
 
         var trailName = $("<h3>").text(" " + data[i].name);
-<<<<<<< HEAD
-        var trailBlurb = $("<p>").text("- " + data[i].summary);
-        var length = $("<p>").text("- " + data[i].length + " miles");
-        var difficulty = $("<p>").text("- " + data[i].difficulty);
-        var stars = $("<p>").text("- " + data[i].stars);
-=======
 
         var trailBlurb = $("<p>").text(data[i].summary);
         var length = $("<p>").text(data[i].length + " miles");
@@ -60,7 +54,6 @@ $(function() {
 
         $(button).addClass("btn btn-secondary hike-it").data("name", data[i].name).data("length", data[i].length);
 
->>>>>>> 8f6324dad8d9c2913139b0620daa54fb575a5072
 
         var trailPic = $("<img>");
         trailPic.attr("src", data[i].imgSmall);
