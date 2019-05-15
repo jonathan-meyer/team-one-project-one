@@ -10,8 +10,28 @@ background-image: url("../images/topograph.png") !important;
 .container  {
 width: 100vw;
 background-color:white;
+}
 
+.footer {
+position: fixed;
+bottom: 0;
+width: 100vw;
+z-index: 3;
+}
 
+.footer-container {
+text-align: center;
+color: black;
+background-color: rgb(240, 212, 151);
+padding-top: 8px;
+padding-bottom: 8px;
+}
+
+.text {
+color: black;
+font-size: 14pt;
+font-family: 'Pacifico', cursive;
+margin-bottom: 9px;
 }
 
 #carouselContainer {
