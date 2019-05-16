@@ -75,27 +75,23 @@ $(function() {
       //Collecting data attributes and storing them in Firebase
       $(".hike-it").on("click", function(){
         
-
         var myHike = {
           myTrail: $(this).data("name"),
           myMiles: $(this).data("length")
         }
         console.log(myHike);
         database.ref().push(myHike);
-
-        
       })
-      //display firbase info on html
-      database.ref().on("child_added", function(childSnapshot){
-        totalMiles += childSnapshot.val().myMiles;
-        console.log("You have hiked "+totalMiles+" miles");
-        hikedTrails = $("<p>").text(childSnapshot.val().myTrail);
-        console.log(hikedTrails);
-        $("#hiked-trails").append(hikedTrails);
-      })
+     
     });
-
-
+  });
+  //display firbase info on html
+  database.ref().on("child_added", function(childSnapshot){
+    totalMiles += childSnapshot.val().myMiles;
+    console.log("You have hiked "+totalMiles+" miles");
+    hikedTrails = $("<p>").text(childSnapshot.val().myTrail);
+    console.log(hikedTrails);
+    $("#hiked-trails").append(hikedTrails);
   });
   //Google Maps api call
   $("#load_latlon").on("click", function(e) {
