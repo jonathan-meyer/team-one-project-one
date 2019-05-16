@@ -14,9 +14,8 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
-var trailName;
-var length;
 var totalMiles = 0;
+var hikedTrails;
 
 //when document loads...
 $(function() {
@@ -90,6 +89,9 @@ $(function() {
       database.ref().on("child_added", function(childSnapshot){
         totalMiles += childSnapshot.val().myMiles;
         console.log("You have hiked "+totalMiles+" miles");
+        hikedTrails = $("<p>").text(childSnapshot.val().myTrail);
+        console.log(hikedTrails);
+        $("#hiked-trails").append(hikedTrails);
       })
     });
 
