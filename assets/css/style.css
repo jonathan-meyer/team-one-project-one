@@ -140,19 +140,21 @@ margin: 0;
   margin-top: 0px;
   margin-bottom: 10px;
   color: black;
-  
+  display: flex;
+  flex-wrap: wrap;
+  /* break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid; */
+
   
 }
 
 #new-div {
   border: 7px solid rgb(46, 63, 46);
   border-radius: 3%;
-  height: 600px;
+  height: 100%;
   margin-bottom: 20px;
   text-align: center;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
   background-image: url("../images/paper.jpg");
 }
 
@@ -165,7 +167,7 @@ margin: 0;
   /* background-image: url("../images/paper.jpg"); */
   background-color: rgb(46, 63, 46);
   color: white;
-  height:100px;
+  height: 100px;
   padding-top: 25px;
 
 }
