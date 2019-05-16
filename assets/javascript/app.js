@@ -48,6 +48,7 @@ $(function() {
         });
         //create variables to hold api data
         var trailName = $("<h3>").text(" " + data[i].name);
+
         var trailBlurb = $("<p>").text(data[i].summary);
         var length = $("<p>").text(data[i].length + " miles");
         var difficulty = $("<p>").text(data[i].difficulty);
@@ -55,6 +56,7 @@ $(function() {
         var button = $("<button>").text("Hike it!");
 
         $(button).addClass("btn btn-secondary hike-it").data("name", data[i].name).data("length", data[i].length);
+
 
         var trailPic = $("<img>");
         trailPic.attr("src", data[i].imgSmall);
