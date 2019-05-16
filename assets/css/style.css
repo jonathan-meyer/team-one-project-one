@@ -123,38 +123,23 @@ margin: 0;
   width: 100%;
 }
 
-#trails {
-  column-count: 3;
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  display: inline-block;
-  background-color: white;
- 
-}
-
-
-
-
 #new-card{
   
   margin-top: 0px;
   margin-bottom: 10px;
   color: black;
-  display: flex;
-  flex-wrap: wrap;
-  /* break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid; */
-
-  
+  display: inline-block;
 }
 
-#new-div {
+.new-div {
   border: 7px solid rgb(46, 63, 46);
   border-radius: 3%;
-  height: 100%;
-  margin-bottom: 20px;
+  min-height: 550px;
+  display: inline-block;
+  max-width: calc(33.333333% - 8px);
+  margin: 4px;
   text-align: center;
+  float: left;
   background-image: url("../images/paper.jpg");
 }
 
@@ -164,7 +149,6 @@ margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: bolder;
   font-size: 26px;
-  /* background-image: url("../images/paper.jpg"); */
   background-color: rgb(46, 63, 46);
   color: white;
   height: 100px;
@@ -271,6 +255,17 @@ margin: 0;
       width: 30px !important;
     }
 
+    .new-div {
+      border: 7px solid rgb(46, 63, 46);
+      border-radius: 3%;
+      min-height: 550px;
+      display: block;
+      max-width: calc(50% - 8px);
+      margin: 4px;
+      text-align: center;
+      background-image: url("../images/paper.jpg");
+    }
+
   }
 
    /*700px*/
@@ -297,7 +292,16 @@ margin: 0;
     .lead {
       font-size: 10px;
     }
-
+    .new-div {
+      border: 7px solid rgb(46, 63, 46);
+      border-radius: 3%;
+      min-height: 550px;
+      display: block;
+      max-width: calc(100% - 8px);
+      margin: 4px;
+      text-align: center;
+      background-image: url("../images/paper.jpg");
+    }
 
   /*576*/
 
@@ -325,7 +329,16 @@ margin: 0;
       font-size: 10px;
     }
 
-
+    .new-div {
+      border: 7px solid rgb(46, 63, 46);
+      border-radius: 3%;
+      min-height: 550px;
+      display: block;
+      width: calc(100% - 8px);
+      margin: 4px;
+      text-align: center;
+      background-image: url("../images/paper.jpg");
+    }
 
    }
 
