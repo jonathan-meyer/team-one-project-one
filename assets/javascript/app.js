@@ -1,3 +1,5 @@
+//Global Variables
+
 var firebaseConfig = {
   apiKey: "AIzaSyCigFa99mWeaeY2L7Iheqdo_JbcLZapIFs",
   authDomain: "take-a-hike-de5fe.firebaseapp.com",
@@ -14,10 +16,11 @@ var database = firebase.database();
 
 var trailName;
 var length;
+var totalMiles = 0;
 
-
+//when document loads...
 $(function() {
- 
+  //Hiking project AJAX call
   $("#hike").on("click", function(e) {
     e.preventDefault();
 
@@ -43,7 +46,7 @@ $(function() {
         var trailDiv = $("<div>", {
           id: 'new-div',
         });
-
+        //create variables to hold api data
         var trailName = $("<h3>").text(" " + data[i].name);
         var trailBlurb = $("<p>").text(data[i].summary);
         var length = $("<p>").text(data[i].length + " miles");
@@ -55,7 +58,7 @@ $(function() {
 
         var trailPic = $("<img>");
         trailPic.attr("src", data[i].imgSmall);
-
+        //display api data on html
         $(trailDiv).append(trailName);
         $(trailDiv).append(trailPic);
         $(trailDiv).append(trailBlurb);
@@ -68,6 +71,7 @@ $(function() {
 
         
       }
+      //Collecting data attributes and storing them in Firebase
       $(".hike-it").on("click", function(){
         
 
@@ -80,11 +84,16 @@ $(function() {
 
         
       })
+      //display firbase info on html
+      database.ref().on("child_added", function(childSnapshot){
+        totalMiles += childSnapshot.val().myMiles;
+        console.log("You have hiked "+totalMiles+" miles");
+      })
     });
 
 
   });
-
+  //Google Maps api call
   $("#load_latlon").on("click", function(e) {
     e.preventDefault();
 
