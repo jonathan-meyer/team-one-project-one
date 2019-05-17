@@ -40,9 +40,7 @@ $(function() {
       console.log(data);
 
       for (var i = 0; i < Math.min(9, data.length); i++) {
-        var trailDiv = $("<div>", {
-          id: 'new-div',
-        });
+        var trailDiv = $("<div>").addClass('new-div');
 
         var trailName = $("<h3>").text(" " + data[i].name);
 
