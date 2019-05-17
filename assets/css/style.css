@@ -140,35 +140,44 @@ margin: 0;
 .new-div {
   border: 7px solid rgb(46, 63, 46);
   border-radius: 3%;
-  min-height: 550px;
+  min-height: 570px;
   display: inline-block;
   width: calc(33.333333% - 8px);
   margin: 4px;
   text-align: center;
   float: left;
   background-image: url("../images/paper.jpg");
+  position: relative;
 }
 
-#new-div h3 {
+#new-card h3 {
   margin-top: 25px;
   margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
   font-weight: bolder;
-  font-size: 26px;
+  font-size: 22px;
   background-color: rgb(46, 63, 46);
   color: white;
-  height: 100px;
+  height: 80px;
   padding-top: 25px;
 
 }
 
-#new-div p {
+#new-card p {
   text-align: left;
   margin-left: 15px;
   margin-top: 15px;
   color: white;
-  font-weight: bolder;
-  font-size: 24px;
+  font-size: 16px;
+
+}
+
+.hike-it {
+  position: absolute;
+  bottom: 5px;
+  left: 38%;
+  background-color: rgb(46, 63, 46);
+  border: 1px solid white;
 }
   /*Media Queries*/
 
