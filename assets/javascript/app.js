@@ -86,7 +86,8 @@ $(function() {
   });
   //display firbase info on html
   database.ref().on("child_added", function(childSnapshot){
-    totalMiles += childSnapshot.myMiles
+    totalMiles += childSnapshot.val(myMiles);
+    console.log(totalMiles);
   })
    
   $("#load_latlon").on("click", function(e) {
