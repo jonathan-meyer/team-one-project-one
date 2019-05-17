@@ -111,6 +111,18 @@
             <!-- End Form Entries Form -->
 
             <a href="#" class="btn btn-primary" id="hike">Get Hikin'!</a>
+            <!-- Modal button to hold hiked trails -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">My Trails</button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <h3 id="trail-head">Trails you have hiked!</h3>
+                  <div id="hiked-trails"></div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Modal -->
           </div>
         </div>
         <img src="./assets/images/mountain-vector.png" alt="mountain range" id="mountain-img" />
@@ -187,6 +199,10 @@
     </div>
   </div>
   <!-- End Form Card -->
+  <!-- Footer display -->
+  <footer class="page-footer fixed-bottom" id="footer">
+    <span class="span" id="total-miles"></span>
+  </footer>
 </body>
 
 </html>

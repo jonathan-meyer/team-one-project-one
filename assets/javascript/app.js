@@ -14,7 +14,7 @@ var database = firebase.database();
 
 var trailName;
 var length;
-
+var totalMiles = 0;
 
 $(function() {
  
@@ -84,6 +84,17 @@ $(function() {
 
 
   });
+  //Displaying firebase data on html
+  database.ref().on("child_added", function(childSnapshot){
+
+    totalMiles += childSnapshot.val().myMiles;
+    var displayMiles =totalMiles.toFixed(1);
+    $("#total-miles").text("You have hiked "+displayMiles+" Miles!" );
+
+    hikedTrails = $("<p>").text(childSnapshot.val().myTrail);
+    console.log(hikedTrails);
+    $("#hiked-trails").append(hikedTrails);
+  })
 
   $("#load_latlon").on("click", function(e) {
     e.preventDefault();
