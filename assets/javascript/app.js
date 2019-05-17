@@ -11,7 +11,8 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
-
+var myMiles;
+var myTrail;
 var trailName;
 var length;
 var totalMiles = 0;
@@ -81,14 +82,14 @@ $(function() {
         
       })
     });
-
-
-  });
-  //display firbase info on html
-  database.ref().on("child_added", function(childSnapshot){
+    //display firbase info on html
+    database.ref().on("child_added", function(childSnapshot){
     totalMiles += childSnapshot.val(myMiles);
     console.log(totalMiles);
   })
+
+  });
+  
    
   $("#load_latlon").on("click", function(e) {
     e.preventDefault();
