@@ -14,9 +14,15 @@ background-color:white;
 
 }
 
+#carContainer {
+  /* width: 80vw; */
+}
+
 #carouselContainer {
 margin-top: 60px;
 padding-bottom: 60px;
+
+
 }
 
 #carouselExampleIndicators {
