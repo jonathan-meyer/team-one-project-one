@@ -10,8 +10,11 @@ background-image: url("../images/topograph.png") !important;
 .container  {
 width: 100vw;
 background-color:white;
+}
 
-
+#car-container {
+  width: 80vw;
+  margin: 0 auto;
 }
 
 #carouselContainer {
