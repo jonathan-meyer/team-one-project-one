@@ -38,7 +38,7 @@ $(function() {
     }).then(function(response) {
       var data = response.trails;
       console.log(data);
-
+      $("#new-card").empty();
       for (var i = 0; i < Math.min(9, data.length); i++) {
         var trailDiv = $("<div>").addClass('new-div');
 
