@@ -14,6 +14,7 @@ background-color:white;
 
 #new-card-container {
   width: 80vw;
+  margin-bottom: 60px;
 }
 
 #car-container {
@@ -140,7 +141,7 @@ margin: 0;
 .new-div {
   border: 7px solid rgb(46, 63, 46);
   border-radius: 3%;
-  min-height: 570px;
+  min-height: 630px;
   display: inline-block;
   width: calc(33.333333% - 8px);
   margin: 4px;
@@ -148,7 +149,9 @@ margin: 0;
   float: left;
   background-image: url("../images/paper.jpg");
   position: relative;
+  
 }
+
 
 #new-card h3 {
   margin-top: 25px;
@@ -158,7 +161,7 @@ margin: 0;
   font-size: 22px;
   background-color: rgb(46, 63, 46);
   color: white;
-  height: 80px;
+  height: 110px;
   padding-top: 25px;
 
 }
@@ -175,7 +178,7 @@ margin: 0;
 .hike-it {
   position: absolute;
   bottom: 5px;
-  left: 38%;
+  left: 35%;
   background-color: rgb(46, 63, 46);
   border: 1px solid white;
 }
