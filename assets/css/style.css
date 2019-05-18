@@ -272,10 +272,10 @@ margin: 0;
 
     .new-div {
       border: 7px solid rgb(46, 63, 46);
-      border-radius: 3%;
+      border-radius: 4px;
       min-height: 550px;
       display: block;
-      max-width: calc(50% - 8px);
+      width: calc(50% - 8px);
       margin: 4px;
       text-align: center;
       background-image: url("../images/paper.jpg");
@@ -312,7 +312,7 @@ margin: 0;
       border-radius: 3%;
       min-height: 550px;
       display: block;
-      max-width: calc(100% - 8px);
+      width: calc(50% - 8px);
       margin: 4px;
       text-align: center;
       background-image: url("../images/paper.jpg");
